@@ -31,4 +31,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configuration.planeDetection = .vertical
         sceneView.session.run(configuration)
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
+        
+        // create node
+        let planeNode = SCNNode()
+        
+        // create geometry
+        let geometry = SCNPlane(width: CGFloat(planeAnchor.extent.x),
+                                height: CGFloat(planeAnchor.extent.z))
+        geometry.materials.first?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+        
+        // set Geometry and Transform on the node
+        planeNode.geometry = geometry
+        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2.0, 1, 0, 0)
+        
+        // detection anchor with child node
+        node.addChildNode(planeNode)
+    }
 }
