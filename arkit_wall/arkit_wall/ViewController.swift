@@ -50,4 +50,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // detection anchor with child node
         node.addChildNode(planeNode)
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
+        guard let geometryPlaneNode = node.childNodes.first, let planeGeometry = geometryPlaneNode.geometry as? SCNPlane else {fatalError()}
+        
+        // update geometry
+        planeGeometry.width = CGFloat(planeAnchor.extent.x)
+        planeGeometry.height = CGFloat(planeAnchor.extent.y)
+        geometryPlaneNode.simdPosition = float3(planeAnchor.center.x, 0, planeAnchor.center.z)
+    }
 }
