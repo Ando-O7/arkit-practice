@@ -43,6 +43,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                                 height: CGFloat(planeAnchor.extent.z))
         geometry.materials.first?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
         
+        // color(horizontal or vertical)
+        let floorColor: UIColor = UIColor.red.withAlphaComponent(0.5)
+        let wallColor: UIColor = UIColor.blue.withAlphaComponent(0.5)
+        
+        // color setting by vertical or horizontal
+        if planeAnchor.alignment == .horizontal
+        {
+            geometry.materials.first?.diffuse.contents = floorColor
+        }
+        else
+        {
+            geometry.materials.first?.diffuse.contents = wallColor
+        }
+        
         // set Geometry and Transform on the node
         planeNode.geometry = geometry
         planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2.0, 1, 0, 0)
