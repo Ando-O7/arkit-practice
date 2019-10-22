@@ -20,14 +20,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        // create and register scene
+        sceneView.scene = SCNScene()
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        // view feature points
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
-        // Set the scene to the view
-        sceneView.scene = scene
+        // add light
+        sceneView.autoenablesDefaultLighting = true
+        
+        // detection horizontal plane
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        sceneView.session.run(configuration)
     }
     
     override func viewWillAppear(_ animated: Bool) {
