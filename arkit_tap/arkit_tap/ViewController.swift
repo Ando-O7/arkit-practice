@@ -35,6 +35,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
+    // touch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // get of first tap coordinate
+        guard let touch = touches.first else {return}
+        
+        // transtrate screen coordinate
+        let touchPos = touch.location(in: sceneView)
+        
+        // find AR anchor at tapped position
+        let hitTest = sceneView.hitTest(touchPos, types: .existingPlaneUsingExtent)
+        if !hitTest.isEmpty {
+            // add anchor if tapped location is available
+            let anchor = ARAnchor(transform: hitTest.first!.worldTransform)
+            sceneView.session.add(anchor: anchor)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
