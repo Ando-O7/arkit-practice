@@ -52,6 +52,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    // detection
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard !(anchor is ARPlaneAnchor) else { return }
+        
+        // create sphere node
+        let sphereNode = SCNNode()
+        
+        // set Geometry and Transform at node
+        sphereNode.geometry = SCNSphere(radius: 0.05)
+        sphereNode.position.y += Float(0.05)
+        
+        node.addChildNode(sphereNode)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
