@@ -34,4 +34,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configlation.planeDetection = .horizontal
         sceneView.session.run(configlation)
     }
+    
+    // when detection it call
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        // read scene from scn file
+        let scene = SCNScene(named: "art.scnassets/Handgun_dae.scn")
+        
+        // search node from scene
+        let handgunNode = (scene?.rootNode.childNode(withName: "handgun", recursively: false))!
+        
+        // child node
+        node.addChildNode(handgunNode)
+    }
 }
