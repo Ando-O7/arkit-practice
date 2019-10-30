@@ -26,6 +26,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // view feature points
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
+        // add Omni light
+        let omniLightNode = SCNNode()
+        omniLightNode.light = SCNLight()
+        omniLightNode.light!.type = .omni
+        omniLightNode.position = SCNVector3(x: 0, y: 10, z: 10)
+        omniLightNode.light!.color = UIColor.white
+        self.sceneView.scene.rootNode.addChildNode(omniLightNode)
+        
         // detection horizontal plane
         let configulation = ARWorldTrackingConfiguration()
         configulation.planeDetection = .horizontal
