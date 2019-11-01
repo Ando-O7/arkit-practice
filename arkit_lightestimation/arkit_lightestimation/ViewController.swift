@@ -57,4 +57,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         node.addChildNode(shipNode)
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        // whether light source estimation is enabled
+        guard let lightEstimate = self.sceneView.session.currentFrame?.lightEstimate else { return }
+        
+        // update with light estimates
+        omniLight?.intensity = (self.sceneView.session.currentFrame!.lightEstimate?.ambientIntensity)!
+        omniLight?.temperature = (self.sceneView.session.currentFrame!.lightEstimate?.ambientColorTemperature)!
+    }
 }
