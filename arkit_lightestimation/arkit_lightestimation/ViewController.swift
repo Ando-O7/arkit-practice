@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var omniLight: SCNLight!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // create and register scene
         sceneView.scene = SCNScene()
-        var omniLight: SCNLight!
         
         // view feature points
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
