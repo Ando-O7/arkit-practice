@@ -20,10 +20,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
+        // create and register scene
+        sceneView.scene = SCNScene()
         
+        // when using an existing environment map
+        let env = UIImage(named:"art.scnassets/envmap.jpg")
+        self.sceneView.scene.lightingEnvironment.contents = env;
         
+        // view feature points for debug
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
+        // detection horizontal plane
         let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
         
+        sceneView.session.run(configuration)
     }
 }
