@@ -36,4 +36,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.session.run(configuration)
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        // load scene from scn file
+        let scene = SCNScene(named: "art.scnassets/bot1.scn")
+        
+        // search node from scene
+        let botNode = (scene?.rootNode.childNode(withName: "bot1", recursively: false))!
+        
+        // make it a child element of the detection surface
+        node.addChildNode(botNode)
+    }
 }
