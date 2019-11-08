@@ -34,6 +34,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         
+        // automatic create env map
+        configuration.environmentTexturing = .automatic
+        
         sceneView.session.run(configuration)
     }
     
