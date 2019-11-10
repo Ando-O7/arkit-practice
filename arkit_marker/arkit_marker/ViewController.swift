@@ -20,6 +20,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
+        // create and register scene
+        sceneView.scene = SCNScene()
+        
+        // add light
+        sceneView.autoenablesDefaultLighting = true;
+        
+        // get image recognition reference image from asset
+        let configuration = ARImageTrackingConfiguration()
+        configuration.trackingImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)!
+        
+        sceneView.session.run(configuration)
     }
 
 }
