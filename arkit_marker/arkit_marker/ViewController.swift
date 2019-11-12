@@ -32,5 +32,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         sceneView.session.run(configuration)
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        // create node
+        let boxNode = SCNNode()
+        
+        // setting geometry and placement
+        boxNode.geometry = SCNBox(width:0.05, height:0.05, length:0.05, chamferRadius: 0)
+        boxNode.position.y += 0.025
+        
+        node.addChildNode(boxNode)
+    }
 
 }
