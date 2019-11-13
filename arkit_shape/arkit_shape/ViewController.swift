@@ -49,5 +49,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // add node
         node.addChildNode(planeNode)
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
+        guard let planeGeometry = node.childNodes.first!.geometry as? ARSCNPlaneGeometry else {return}
+        
+        // update plane geometry
+        planeGeometry.update(from: planeAnchor.geometry)
+    }
 
 }
