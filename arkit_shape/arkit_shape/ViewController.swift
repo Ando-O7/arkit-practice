@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    private let device = MTLCreateSystemDefaultDevice()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configuration.planeDetection = .horizontal
         
         sceneView.session.run(configuration)
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
+        
+        // create plannar geometry
+        let planeGeometry = ARSCNPlaneGeometry(device: device)!
+        planeGeometry.update(from: planeAnchor.geometry)
+        planeGeometry.materials.first?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+        
+        // create plane node
+        let planeNode = SCNNode()
+        planeNode.geometry = planeGeometry
+        
+        // add node
+        node.addChildNode(planeNode)
     }
 
 }
