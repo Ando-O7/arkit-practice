@@ -34,5 +34,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configulation.planeDetection = .horizontal
         sceneView.session.run(configulation)
     }
+    
+    // add sphere
+    func addSphere(hitResult: ARHitTestResult) {
+        // generate node
+        let sphereNode = SCNNode()
+        
+        // setting Geometry and Transform
+        let sphereGometry = SCNSphere(radius: 0.03)
+        sphereNode.geometry = sphereGometry
+        sphereNode.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y + 0.05, hitResult.worldTransform.columns.3.z)
+        
+        // add node
+        sceneView.scene.rootNode.addChildNode(sphereNode)
+    }
 
 }
