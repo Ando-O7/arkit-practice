@@ -37,7 +37,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     // add sphere
     func addSphere(hitResult: ARHitTestResult) {
-        // generate node
+        // create node
         let sphereNode = SCNNode()
         
         // setting Geometry and Transform
