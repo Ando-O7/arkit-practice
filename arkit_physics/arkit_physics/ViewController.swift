@@ -76,5 +76,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         planeGeometry.height = CGFloat(planeAnchor.extent.z)
         geometryPlaneNode.simdPosition = SIMD3(planeAnchor.center.x, 0, planeAnchor.center.z)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // get first touch coordinate
+        guard let touch = touches.first else {return}
+        
+        // conversion coordinate of screen
+        let touchPos = touch.location(in: sceneView)
+        
+        // hit detection with detected plane
+        let hitTestResult = sceneView.hitTest(touchPos, types: .existingPlaneUsingExtent)
+        if !hitTestResult.isEmpty {
+            if let hitResult = hitTestResult.first {
+                // add a sphere if it touches the plane
+                addSphere(hitResult: hitResult)
+            }
+        }
+    }
 
 }
