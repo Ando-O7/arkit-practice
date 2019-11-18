@@ -45,6 +45,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sphereNode.geometry = sphereGometry
         sphereNode.position = SCNVector3(hitResult.worldTransform.columns.3.x, hitResult.worldTransform.columns.3.y + 0.05, hitResult.worldTransform.columns.3.z)
         
+        // behavior setting of PhysicsBody
+        sphereNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape:nil)
+        
+        // setting of PhysicsBody parameter
+        sphereNode.physicsBody?.mass = 1.0
+        sphereNode.physicsBody?.friction = 1.5
+        sphereNode.physicsBody?.rollingFriction = 1.0
+        sphereNode.physicsBody?.damping = 0.5
+        sphereNode.physicsBody?.angularDamping = 0.5
+        sphereNode.physicsBody?.isAffectedByGravity = true
+        
+        // apply upward force
+        sphereNode.physicsBody?.applyForce(SCNVector3(0, 1.5, 0), asImpulse: true)
+        
         // add node
         sceneView.scene.rootNode.addChildNode(sphereNode)
     }
