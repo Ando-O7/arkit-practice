@@ -27,6 +27,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }()
     
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        // get current ARWorldMap
+        sceneView.session.getCurrentWorldMap { ARWorldMap, error in
+            guard let map = ARWorldMap else {return}
+            
+            // serialize
+            guard let data = try? NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true) else { return }
+            
+            // save local
+            guard ((try? data.write(to: self.worldMapURL)) != nil) else { return }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
