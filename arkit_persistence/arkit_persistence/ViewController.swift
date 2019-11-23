@@ -40,6 +40,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    @IBAction func loadButtonPressed(_ sender: Any) {
+        // load of save ARWorldMap
+        var data: Data? = nil
+        do {
+            try data = Data(contentsOf: self.worldMapURL)
+        } catch { return }
+        
+        // deserialize
+        guard let worldMap = try? NSKeyedArchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data!) else { return }
+        
+        // resetting WorldMap
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        configuration.initialWorldMap = worldMap
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
