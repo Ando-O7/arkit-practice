@@ -48,7 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } catch { return }
         
         // deserialize
-        guard let worldMap = try? NSKeyedArchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data!) else { return }
+        guard let worldMap = try? NSKeyedUnarchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data!) else { return }
         
         // resetting WorldMap
         let configuration = ARWorldTrackingConfiguration()
