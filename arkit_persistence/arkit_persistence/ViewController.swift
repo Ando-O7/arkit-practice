@@ -95,4 +95,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             sceneView.session.add(anchor: anchor)
         }
     }
+    
+    func renderer(_ renderer:SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard !(anchor is ARPlaneAnchor) else {return}
+        
+        // load scene from scn file
+        let scene = SCNScene(named: "art.scnassets/container.scn")
+        
+        // search node from scene
+        let containerNode = (scene?.rootNode.childNode(withName: "container", recursively: false))!
+        
+        // add child node with detection plane
+        node.addChildNode(containerNode)
+    }
 }
