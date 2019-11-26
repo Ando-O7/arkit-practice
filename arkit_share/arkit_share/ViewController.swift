@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import MultipeerConnectivity
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
