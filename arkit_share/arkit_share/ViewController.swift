@@ -35,6 +35,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the view's delegate
         sceneView.delegate = self
+        
+        // create scene
+        sceneView.scene = SCNScene()
+        
+        // view feature points for debug
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        
+        // add light
+        sceneView.autoenablesDefaultLighting = true
+        
+        // detection horizontal plane
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        
+        sceneView.session.run(configuration)
     }
     
     func receivedData(_ data: Data, from peer: MCPeerID) {
