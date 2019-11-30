@@ -14,7 +14,13 @@ import MultipeerConnectivity
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    static let serviceType = "ar-multi-sample"
+    private let myPeerID = MCPeerID(displayName: UIDevice.current.name)
+    private var mpsessoin: MCSession!
+    private var serviceAdvertiser: MCNearbyServiceAdvertiser!
+    private var serviceBrowser: MCNearbyServiceBrowser!
     var otherPeerID: MCPeerID?
+    private var mpsession: MCSession!
     let colorTable = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.white, UIColor.black]
     var myColorIdx = 0
     
@@ -23,6 +29,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // setting color
         myColorIdx = Int(arc4random_uniform(UInt32(colorTable.count)))
+        
+        // init MultipeerConnectiveity
+        initMultipeerSession(recevieDataHandler: receivedData)
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -46,5 +55,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 sceneView.session.add(anchor: anchor)
             }
         } catch {}
+    }
+    
+    func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
+        mpsession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
+        mpsession.delegate = self
+        
+        serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: nil, serviceType: ViewController.serviceType)
+        serviceAdvertiser.delegate = self
+        serviceAdvertiser.startAdvertisingPeer()
+        
+        serviceBrowser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: ViewController.serviceType)
+        serviceBrowser.delegate = self
+        serviceBrowser.startBrowsingForPeers()
     }
 }
