@@ -72,6 +72,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } catch {}
     }
     
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if((anchor as? ARPlaneAnchor) != nil) { return }
+        
+        // create node
+        let sphereNode = SCNNode()
+        let sphereGeometry = SCNSphere(radius: 0.03)
+        
+        // setting sphere color
+        if let name = anchor.name{
+            sphereGeometry.materials.first?.diffuse.contents = colorTable[Int(name)!]
+        }
+        
+        // register geometry
+        sphereNode.geometry = sphereGeometry
+        sphereNode.position.y += 0.03
+        
+        node.addChildNode(sphereNode)
+    }
+    
     func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
         mpsession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         mpsession.delegate = self
