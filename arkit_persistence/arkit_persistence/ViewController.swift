@@ -100,10 +100,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         guard !(anchor is ARPlaneAnchor) else {return}
         
         // load scene from scn file
-        let scene = SCNScene(named: "art.scnassets/container.scn")
+        let scene = SCNScene(named: "art.scnassets/ship.scn")
         
         // search node from scene
-        let containerNode = (scene?.rootNode.childNode(withName: "container", recursively: false))!
+        let containerNode = (scene?.rootNode.childNode(withName: "ship", recursively: false))!
         
         // add child node with detection plane
         node.addChildNode(containerNode)
