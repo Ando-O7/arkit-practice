@@ -91,6 +91,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(sphereNode)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // get touch coordinate
+        guard let touch = touches.first else {return}
+        
+        // conversion to screen coordinate
+        let touchPos = touch.location(in: sceneView)
+        
+        // search AR anchor for touch coordinate
+        let hitTest = sceneView.hitTest(touchPos, types: .existingPlaneUsingExtent)
+        
+        // case of touch horizontal palane
+        if !hitTest.isEmpty {
+            // setting color index for anchor name
+            let anchor = ARAnchor(name: String(myColorIdx), transform: hitTest.first!.worldTransform)
+            
+            sceneView.session.add(anchor: anchor)
+            
+            // added information of anchor send to partner
+            guard let data = try? NSKeyedArchiver.archivedData(withRootObject: anchor, requiringSecureCoding: true) else { fatalError("can't encode anchor")}
+            self.sendToAllPeers(data)
+        }
+    }
+    
     func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
         mpsession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         mpsession.delegate = self
