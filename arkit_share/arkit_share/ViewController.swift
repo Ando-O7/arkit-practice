@@ -103,4 +103,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         serviceBrowser.delegate = self
         serviceBrowser.startBrowsingForPeers()
     }
+    
+    func sendToAllPeers(_ data: Data) {
+        do {
+            try mpsession.send(data, toPeers: mpsession.connectedPeers, with: .reliable)
+        } catch {
+            print("error sending data to peers: \(error.localizedDescription)")
+        }
+    }
 }
