@@ -52,26 +52,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
-    func receivedData(_ data: Data, from peer: MCPeerID) {
-        do {
-            // if receive data is ARWorldMap
-            if let worldMap = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data) {
-                // run the session with the received world map
-                let configuration = ARWorldTrackingConfiguration()
-                configuration.planeDetection = .horizontal
-                configuration.initialWorldMap = worldMap
-                sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-                otherPeerID = peer
-            }
-        } catch {}
-        do {
-            // if receive data is ARAnchor
-            if let anchor = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARAnchor.self, from: data) {
-                sceneView.session.add(anchor: anchor)
-            }
-        } catch {}
-    }
-    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if((anchor as? ARPlaneAnchor) != nil) { return }
         
@@ -112,6 +92,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             guard let data = try? NSKeyedArchiver.archivedData(withRootObject: anchor, requiringSecureCoding: true) else { fatalError("can't encode anchor")}
             self.sendToAllPeers(data)
         }
+    }
+    
+    func receivedData(_ data: Data, from peer: MCPeerID) {
+        do {
+            // if receive data is ARWorldMap
+            if let worldMap = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARWorldMap.self, from: data) {
+                // run the session with the received world map
+                let configuration = ARWorldTrackingConfiguration()
+                configuration.planeDetection = .horizontal
+                configuration.initialWorldMap = worldMap
+                sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+                otherPeerID = peer
+            }
+        } catch {}
+        do {
+            // if receive data is ARAnchor
+            if let anchor = try NSKeyedUnarchiver.unarchivedObject(ofClass: ARAnchor.self, from: data) {
+                sceneView.session.add(anchor: anchor)
+            }
+        } catch {}
     }
     
     func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
