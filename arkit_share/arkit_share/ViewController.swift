@@ -144,4 +144,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             print("error sending data to peers: \(error.localizedDescription)")
         }
     }
+    
+    var connectedPeers: [MCPeerID] {
+        return mpsession.connectedPeers
+    }
 }
