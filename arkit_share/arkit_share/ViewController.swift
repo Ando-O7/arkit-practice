@@ -94,6 +94,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    @IBAction func shareButtonPressed(_ button: UIButton) {
+        // get world map
+        sceneView.session.getCurrentWorldMap { worldMap, error in guard let map = worldMap else {return}
+            // serialize data
+            guard let data = try? NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true) else {fatalError("can't encode map")}
+            // send partner device
+            self.sendToAllPeers(data)
+        }
+    }
+    
     func receivedData(_ data: Data, from peer: MCPeerID) {
         do {
             // if receive data is ARWorldMap
