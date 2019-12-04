@@ -160,4 +160,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func session(_ session: MCSession, didStartReceiveingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {}
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error) {}
+    
+    public func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
+        browser.invitePeer(peerID, to: mpsession, withContext: nil, timeout: 10)
+    }
+    public func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {}
 }
