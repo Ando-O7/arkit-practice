@@ -165,4 +165,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         browser.invitePeer(peerID, to: mpsession, withContext: nil, timeout: 10)
     }
     public func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {}
+    
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        invitationHandler(true, self.mpsession)
+    }
 }
