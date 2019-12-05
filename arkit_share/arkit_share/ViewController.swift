@@ -126,14 +126,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
         mpsession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
-        mpsession.delegate = self
+        mpsession.delegate = self.mpsession.delegate
         
         serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: nil, serviceType: ViewController.serviceType)
-        serviceAdvertiser.delegate = self
+        serviceAdvertiser.delegate = self.serviceAdvertiser.delegate
         serviceAdvertiser.startAdvertisingPeer()
         
         serviceBrowser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: ViewController.serviceType)
-        serviceBrowser.delegate = self
+        serviceBrowser.delegate = self.serviceBrowser.delegate
         serviceBrowser.startBrowsingForPeers()
     }
     
