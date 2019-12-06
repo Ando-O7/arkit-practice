@@ -18,17 +18,29 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </arscnView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="target_512.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-fx-hy4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="target_512.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fpa-fx-hy4">
                                 <rect key="frame" x="101" y="220" width="119" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0I-ne-wJW">
+                                <rect key="frame" x="125" y="393" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="G0I-ne-wJW" firstAttribute="top" secondItem="Fpa-fx-hy4" secondAttribute="bottom" constant="45" id="ArP-oO-exg"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="Fpa-fx-hy4" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="220" id="KIO-lo-uGy"/>
+                            <constraint firstItem="Fpa-fx-hy4" firstAttribute="centerX" secondItem="BrB-h1-WRS" secondAttribute="centerX" id="Kv5-nb-TfO"/>
+                            <constraint firstItem="Fpa-fx-hy4" firstAttribute="centerX" secondItem="G0I-ne-wJW" secondAttribute="centerX" id="Vj8-yq-Bve"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="Fpa-fx-hy4" firstAttribute="centerY" secondItem="BrB-h1-WRS" secondAttribute="centerY" id="YM7-cS-dYl"/>
+                            <constraint firstItem="G0I-ne-wJW" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="125" id="eIV-C1-zjy"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                            <constraint firstItem="Fpa-fx-hy4" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="101" id="uzM-DL-8mh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
