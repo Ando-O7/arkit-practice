@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AAFA6260239946FE00E1085C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA625F239946FE00E1085C /* AppDelegate.swift */; };
+		AAFA6262239946FE00E1085C /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFA6261239946FE00E1085C /* art.scnassets */; };
+		AAFA6264239946FE00E1085C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA6263239946FE00E1085C /* ViewController.swift */; };
+		AAFA6267239946FE00E1085C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFA6265239946FE00E1085C /* Main.storyboard */; };
+		AAFA6269239946FF00E1085C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAFA6268239946FF00E1085C /* Assets.xcassets */; };
+		AAFA626C239946FF00E1085C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAFA626A239946FF00E1085C /* LaunchScreen.storyboard */; };
+		AAFA62772399470000E1085C /* arkit_lazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA62762399470000E1085C /* arkit_lazerTests.swift */; };
+		AAFA62822399470000E1085C /* arkit_lazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA62812399470000E1085C /* arkit_lazerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAFA62732399470000E1085C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAFA6254239946FE00E1085C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAFA625B239946FE00E1085C;
+			remoteInfo = arkit_lazer;
+		};
+		AAFA627E2399470000E1085C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAFA6254239946FE00E1085C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAFA625B239946FE00E1085C;
+			remoteInfo = arkit_lazer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AAFA625C239946FE00E1085C /* arkit_lazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arkit_lazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFA625F239946FE00E1085C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AAFA6261239946FE00E1085C /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		AAFA6263239946FE00E1085C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAFA6266239946FE00E1085C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAFA6268239946FF00E1085C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AAFA626B239946FF00E1085C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AAFA626D239946FF00E1085C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAFA62722399470000E1085C /* arkit_lazerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arkit_lazerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFA62762399470000E1085C /* arkit_lazerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arkit_lazerTests.swift; sourceTree = "<group>"; };
+		AAFA62782399470000E1085C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAFA627D2399470000E1085C /* arkit_lazerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arkit_lazerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFA62812399470000E1085C /* arkit_lazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arkit_lazerUITests.swift; sourceTree = "<group>"; };
+		AAFA62832399470000E1085C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AAFA6259239946FE00E1085C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFA626F2399470000E1085C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFA627A2399470000E1085C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AAFA6253239946FE00E1085C = {
+			isa = PBXGroup;
+			children = (
+				AAFA625E239946FE00E1085C /* arkit_lazer */,
+				AAFA62752399470000E1085C /* arkit_lazerTests */,
+				AAFA62802399470000E1085C /* arkit_lazerUITests */,
+				AAFA625D239946FE00E1085C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AAFA625D239946FE00E1085C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAFA625C239946FE00E1085C /* arkit_lazer.app */,
+				AAFA62722399470000E1085C /* arkit_lazerTests.xctest */,
+				AAFA627D2399470000E1085C /* arkit_lazerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAFA625E239946FE00E1085C /* arkit_lazer */ = {
+			isa = PBXGroup;
+			children = (
+				AAFA625F239946FE00E1085C /* AppDelegate.swift */,
+				AAFA6261239946FE00E1085C /* art.scnassets */,
+				AAFA6263239946FE00E1085C /* ViewController.swift */,
+				AAFA6265239946FE00E1085C /* Main.storyboard */,
+				AAFA6268239946FF00E1085C /* Assets.xcassets */,
+				AAFA626A239946FF00E1085C /* LaunchScreen.storyboard */,
+				AAFA626D239946FF00E1085C /* Info.plist */,
+			);
+			path = arkit_lazer;
+			sourceTree = "<group>";
+		};
+		AAFA62752399470000E1085C /* arkit_lazerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAFA62762399470000E1085C /* arkit_lazerTests.swift */,
+				AAFA62782399470000E1085C /* Info.plist */,
+			);
+			path = arkit_lazerTests;
+			sourceTree = "<group>";
+		};
+		AAFA62802399470000E1085C /* arkit_lazerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AAFA62812399470000E1085C /* arkit_lazerUITests.swift */,
+				AAFA62832399470000E1085C /* Info.plist */,
+			);
+			path = arkit_lazerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AAFA625B239946FE00E1085C /* arkit_lazer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAFA62862399470000E1085C /* Build configuration list for PBXNativeTarget "arkit_lazer" */;
+			buildPhases = (
+				AAFA6258239946FE00E1085C /* Sources */,
+				AAFA6259239946FE00E1085C /* Frameworks */,
+				AAFA625A239946FE00E1085C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = arkit_lazer;
+			productName = arkit_lazer;
+			productReference = AAFA625C239946FE00E1085C /* arkit_lazer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAFA62712399470000E1085C /* arkit_lazerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAFA62892399470000E1085C /* Build configuration list for PBXNativeTarget "arkit_lazerTests" */;
+			buildPhases = (
+				AAFA626E2399470000E1085C /* Sources */,
+				AAFA626F2399470000E1085C /* Frameworks */,
+				AAFA62702399470000E1085C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAFA62742399470000E1085C /* PBXTargetDependency */,
+			);
+			name = arkit_lazerTests;
+			productName = arkit_lazerTests;
+			productReference = AAFA62722399470000E1085C /* arkit_lazerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AAFA627C2399470000E1085C /* arkit_lazerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAFA628C2399470000E1085C /* Build configuration list for PBXNativeTarget "arkit_lazerUITests" */;
+			buildPhases = (
+				AAFA62792399470000E1085C /* Sources */,
+				AAFA627A2399470000E1085C /* Frameworks */,
+				AAFA627B2399470000E1085C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAFA627F2399470000E1085C /* PBXTargetDependency */,
+			);
+			name = arkit_lazerUITests;
+			productName = arkit_lazerUITests;
+			productReference = AAFA627D2399470000E1085C /* arkit_lazerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAFA6254239946FE00E1085C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = AND;
+				TargetAttributes = {
+					AAFA625B239946FE00E1085C = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					AAFA62712399470000E1085C = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = AAFA625B239946FE00E1085C;
+					};
+					AAFA627C2399470000E1085C = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = AAFA625B239946FE00E1085C;
+					};
+				};
+			};
+			buildConfigurationList = AAFA6257239946FE00E1085C /* Build configuration list for PBXProject "arkit_lazer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AAFA6253239946FE00E1085C;
+			productRefGroup = AAFA625D239946FE00E1085C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AAFA625B239946FE00E1085C /* arkit_lazer */,
+				AAFA62712399470000E1085C /* arkit_lazerTests */,
+				AAFA627C2399470000E1085C /* arkit_lazerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AAFA625A239946FE00E1085C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFA6262239946FE00E1085C /* art.scnassets in Resources */,
+				AAFA626C239946FF00E1085C /* LaunchScreen.storyboard in Resources */,
+				AAFA6269239946FF00E1085C /* Assets.xcassets in Resources */,
+				AAFA6267239946FE00E1085C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFA62702399470000E1085C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFA627B2399470000E1085C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AAFA6258239946FE00E1085C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFA6264239946FE00E1085C /* ViewController.swift in Sources */,
+				AAFA6260239946FE00E1085C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFA626E2399470000E1085C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFA62772399470000E1085C /* arkit_lazerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAFA62792399470000E1085C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAFA62822399470000E1085C /* arkit_lazerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAFA62742399470000E1085C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAFA625B239946FE00E1085C /* arkit_lazer */;
+			targetProxy = AAFA62732399470000E1085C /* PBXContainerItemProxy */;
+		};
+		AAFA627F2399470000E1085C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAFA625B239946FE00E1085C /* arkit_lazer */;
+			targetProxy = AAFA627E2399470000E1085C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AAFA6265239946FE00E1085C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAFA6266239946FE00E1085C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AAFA626A239946FF00E1085C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAFA626B239946FF00E1085C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AAFA62842399470000E1085C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AAFA62852399470000E1085C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AAFA62872399470000E1085C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				INFOPLIST_FILE = arkit_lazer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.xan7030.arkit-lazer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AAFA62882399470000E1085C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				INFOPLIST_FILE = arkit_lazer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.xan7030.arkit-lazer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AAFA628A2399470000E1085C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				INFOPLIST_FILE = arkit_lazerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.xan7030.arkit-lazerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arkit_lazer.app/arkit_lazer";
+			};
+			name = Debug;
+		};
+		AAFA628B2399470000E1085C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				INFOPLIST_FILE = arkit_lazerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.xan7030.arkit-lazerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arkit_lazer.app/arkit_lazer";
+			};
+			name = Release;
+		};
+		AAFA628D2399470000E1085C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				INFOPLIST_FILE = arkit_lazerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.xan7030.arkit-lazerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = arkit_lazer;
+			};
+			name = Debug;
+		};
+		AAFA628E2399470000E1085C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				INFOPLIST_FILE = arkit_lazerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.xan7030.arkit-lazerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = arkit_lazer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AAFA6257239946FE00E1085C /* Build configuration list for PBXProject "arkit_lazer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFA62842399470000E1085C /* Debug */,
+				AAFA62852399470000E1085C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAFA62862399470000E1085C /* Build configuration list for PBXNativeTarget "arkit_lazer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFA62872399470000E1085C /* Debug */,
+				AAFA62882399470000E1085C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAFA62892399470000E1085C /* Build configuration list for PBXNativeTarget "arkit_lazerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFA628A2399470000E1085C /* Debug */,
+				AAFA628B2399470000E1085C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAFA628C2399470000E1085C /* Build configuration list for PBXNativeTarget "arkit_lazerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAFA628D2399470000E1085C /* Debug */,
+				AAFA628E2399470000E1085C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AAFA6254239946FE00E1085C /* Project object */;
+}
