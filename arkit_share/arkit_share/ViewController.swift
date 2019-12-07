@@ -129,14 +129,14 @@ extension ViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCN
     
     func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
         mpsession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
-        mpsession.delegate = self.mpsession.delegate
+        mpsession.delegate = self
         
         serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: nil, serviceType: ViewController.serviceType)
-        serviceAdvertiser.delegate = self.serviceAdvertiser.delegate
+        serviceAdvertiser.delegate = self
         serviceAdvertiser.startAdvertisingPeer()
         
         serviceBrowser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: ViewController.serviceType)
-        serviceBrowser.delegate = self.serviceBrowser.delegate
+        serviceBrowser.delegate = self
         serviceBrowser.startBrowsingForPeers()
     }
     
