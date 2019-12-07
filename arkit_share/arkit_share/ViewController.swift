@@ -123,6 +123,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             }
         } catch {}
     }
+}
+
+extension ViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate{
     
     func initMultipeerSession(recevieDataHandler: @escaping (Data, MCPeerID) -> Void) {
         mpsession = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
