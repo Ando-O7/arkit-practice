@@ -39,8 +39,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let hitResults = sceneView.hitTest(centerPos, types: [.featurePoint])
         
         if !hitResults.isEmpty {
-            if let hitTResult = hitResults.first {
-                let distance = hitTResult.distance
+            if let hitResult = hitResults.first {
+                let distance = hitResult.distance
                 
                 // view distance
                 DispatchQueue.main.async {
