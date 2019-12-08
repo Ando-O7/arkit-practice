@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var label: UILabel!
     var centerPos = CGPoint(x: 0, y: 0)
     
     override func viewDidLoad() {
@@ -30,5 +31,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // start session
         let configularion = ARWorldTrackingConfiguration()
         sceneView.session.run(configularion)
+    }
+    
+    // call function per frame
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        // hit judgment feature point and screen center
+        let hitResults = sceneView.hitTest(centerPos, types: [.featurePoint])
+        
+        if !hitResults.isEmpty {
+            if let hitTResult = hitResults.first {
+                let distance = hitTResult.distance
+                
+                // view distance
+                DispatchQueue.main.async {
+                    self.label.text = String(format: "%.1f", distance*100) + " cm"
+                }
+            }
+        }
     }
 }
