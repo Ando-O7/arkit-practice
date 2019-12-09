@@ -44,7 +44,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 
                 // view distance
                 DispatchQueue.main.async {
-                    self.label.text = String(format: "%.1f", distance*100) + " cm"
+                    self.label.text = String(format: "%.1f", distance*100) + "cm"
                 }
             }
         }
