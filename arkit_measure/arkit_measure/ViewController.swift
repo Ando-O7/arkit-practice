@@ -31,4 +31,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         sceneView.session.run(configuration)
     }
+
+    private func putSphere(at pos: SIMD3<Float>) {
+        let node = SCNNode()
+        node.geometry = SCNSphere(radius: 0.003)
+        node.position = SCNVector3(pos.x, pos.y, pos.z)
+        self.sceneView.scene.rootNode.addChildNode(node)
+    }
 }
