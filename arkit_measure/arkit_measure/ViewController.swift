@@ -38,4 +38,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.position = SCNVector3(pos.x, pos.y, pos.z)
         self.sceneView.scene.rootNode.addChildNode(node)
     }
+
+    func drawLine(from: SCNVector3, to: SCNVector3) -> SCNNode
+    {
+        // create geometory of straight line
+        let source = SCNGeometrySource(vertices: [from, to])
+        let element = SCNGeometryElement(data: Data.init(_: [0, 1]), primitiveType: .line, primitiveCount: 1, bytesPerIndex: 1)
+
+        let geometry = SCNGeometry(sources: [source], elements: [element])
+
+        // create staraight line node
+        let node = SCNNode()
+        node.geometry = geometry
+        node.geometry?.materials.first?.diffuse.contents = UIColor.white
+        return node
+    }
 }
