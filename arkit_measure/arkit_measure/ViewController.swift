@@ -14,6 +14,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var centerPos = CGPoint(x: 0, y: 0)
+    var tapCount = 0
+    var startPos = SIMD3<Float>(0, 0, 0)
+    var currentPos = SIMD3<Float>(0, 0, 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.geometry = SCNSphere(radius: 0.003)
         node.position = SCNVector3(pos.x, pos.y, pos.z)
         self.sceneView.scene.rootNode.addChildNode(node)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // placement sphere
+        putSphere(at:currentPos)
+
+        if tapCount == 0 // first tap
+        {
+            startPos = currentPos
+            tapCount = 1
+        }
+        else // second tap
+        {
+            tapCount = 0
+            let lineNode = drawLine(from: SCNVector3(startPos), to: SCNVector3(currentPos))
+            sceneView.scene.rootNode.addChildNode(lineNode)
+        }
     }
 
     func drawLine(from: SCNVector3, to: SCNVector3) -> SCNNode
