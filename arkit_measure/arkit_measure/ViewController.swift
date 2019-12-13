@@ -13,6 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var label: UILabel!
     var centerPos = CGPoint(x: 0, y: 0)
     var tapCount = 0
     var startPos = SIMD3<Float>(0, 0, 0)
@@ -72,5 +73,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.geometry = geometry
         node.geometry?.materials.first?.diffuse.contents = UIColor.white
         return node
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        // get tap position
+        let hitResults = sceneView.hitTest(centerPos, types: [.featurePoint])
+        // jadge success
+        if !hitResults.isEmpty {
+            if let hitResult = hitResults.first {
+                // return position of SCNVector3
+                currentPos = SIMD3<Float>(hitResult.worldTransform.columns.3.x,
+                                          hitResult.worldTransform.columns.3.y,
+                                          hitResult.worldTransform.columns.3.z)
+                // if tap first
+                if tapCount == 1
+                {
+                    // measurement of first point to end point
+                    let len = distance(startPos, currentPos)
+                    DispatchQueue.main.async {
+                        // apply text
+                        self.label.text = String(format:"%.1f", len*100) + " cm"
+                    }
+                }
+            }
+        }
     }
 }
