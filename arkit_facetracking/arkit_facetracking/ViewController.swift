@@ -17,6 +17,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard ARFaceTrackingConfiguration.isSupported else { fatalError("Not supported")}
+
         // Set the view's delegate
         sceneView.delegate = self
         
