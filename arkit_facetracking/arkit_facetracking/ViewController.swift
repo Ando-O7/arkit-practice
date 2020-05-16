@@ -14,10 +14,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    private var faceGeometry: ARSCNFaceGeometry!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard ARFaceTrackingConfiguration.isSupported else { fatalError("Not supported")}
+
+        guard let device = sceneView.device else { return }
+        faceGeometry = ARSCNFaceGeometry(device: device)
 
         // Set the view's delegate
         sceneView.delegate = self
