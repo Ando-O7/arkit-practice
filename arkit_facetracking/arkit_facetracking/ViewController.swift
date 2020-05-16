@@ -23,6 +23,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         guard let device = sceneView.device else { return }
         faceGeometry = ARSCNFaceGeometry(device: device)
+        if let material = faceGeometry.firstMaterial {
+            material.diffuse.contents = UIColor.lightGray
+            material.lightingModel = .physicallyBased
+        }
 
         // Set the view's delegate
         sceneView.delegate = self
@@ -37,6 +41,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor else { return }
-        let faceGeometry = faceAnchor.geometry
+        faceGeometry.update(from: faceAnchor.geometry)
     }
 }
