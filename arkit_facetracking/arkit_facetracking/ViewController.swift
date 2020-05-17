@@ -47,4 +47,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         faceGeometry.update(from: faceAnchor.geometry)
         node.addChildNode(faceNode)
     }
+
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let faceAnchor = anchor as? ARFaceAnchor else { return }
+        faceGeometry.update(from: faceAnchor.geometry)
+    }
 }
