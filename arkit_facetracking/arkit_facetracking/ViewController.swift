@@ -15,6 +15,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     
     private var faceGeometry: ARSCNFaceGeometry!
+    private var faceNode: SCNNode!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             material.diffuse.contents = UIColor.lightGray
             material.lightingModel = .physicallyBased
         }
+
+        faceNode = SCNNode(geometry: faceGeometry)
 
         // Set the view's delegate
         sceneView.delegate = self
@@ -42,5 +45,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor else { return }
         faceGeometry.update(from: faceAnchor.geometry)
+        node.addChildNode(faceNode)
     }
 }
