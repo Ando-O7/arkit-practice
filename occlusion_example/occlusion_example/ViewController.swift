@@ -39,6 +39,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // enable enviromnment mapping
         configuration.environmentTexturing = .automatic
 
+        // check device support People Occlusion
+        var message:String;
+        if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
+            // use People Occlusion
+            configuration.frameSemantics = .personSegmentationWithDepth
+            message = "Yes, device supports people occulusion"
+        } else {
+            message = "No, device not supports poeple occulusion"
+        }
+        print("\(message)")
+
         // Run the view's session
         sceneView.session.run(configuration)
     }
