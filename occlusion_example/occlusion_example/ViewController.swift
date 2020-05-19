@@ -36,6 +36,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
 
+        // enable enviromnment mapping
+        configuration.environmentTexturing = .automatic
+
         // Run the view's session
         sceneView.session.run(configuration)
     }
