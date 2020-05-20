@@ -50,6 +50,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         print("\(message)")
 
+        // view text
+        let depth:CGFloat = 0.2
+        let text = SCNText(string: message, extrusionDepth: depth)
+        text.font = UIFont.systemFont(ofSize: 1.0)
+
+        // create text node and placement
+        let textNode = SCNNode(geometry: text)
+        textNode.position = SCNVector3(-0.5, -1.5, -0.5)
+
         // Run the view's session
         sceneView.session.run(configuration)
     }
