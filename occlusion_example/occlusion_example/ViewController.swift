@@ -59,6 +59,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let textNode = SCNNode(geometry: text)
         textNode.position = SCNVector3(-0.5, -1.5, -0.5)
 
+        // add node
+        sceneView.scene.rootNode.addChildNode(textNode)
+
         // Run the view's session
         sceneView.session.run(configuration)
     }
