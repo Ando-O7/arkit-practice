@@ -59,6 +59,30 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let textNode = SCNNode(geometry: text)
         textNode.position = SCNVector3(-0.5, -1.5, -0.5)
 
+        // add text material
+        let m1 = SCNMaterial()
+        m1.diffuse.contents = UIColor.red
+        m1.lightingModel = .physicallyBased
+        m1.metalness.contents = 1.0
+        m1.metalness.intensity = 1.0
+        m1.roughness.intensity = 0.0
+
+        let m2 = SCNMaterial()
+        m2.diffuse.contents = UIColor.green
+        m2.lightingModel = .physicallyBased
+        m2.metalness.contents = 1.0
+        m2.metalness.intensity = 1.0
+        m2.roughness.intensity = 0.0
+
+        let m3 = SCNMaterial()
+        m3.diffuse.contents = UIColor.blue
+        m3.lightingModel = .physicallyBased
+        m3.metalness.contents = 1.0
+        m3.metalness.intensity = 1.0
+        m3.roughness.intensity = 0.0
+
+        text.materials = [m1, m2, m3]
+
         // add node
         sceneView.scene.rootNode.addChildNode(textNode)
 
