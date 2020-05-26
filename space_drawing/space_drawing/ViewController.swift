@@ -34,4 +34,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // start session
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
+
+    private func isReadyForDrawing(trackingState: ARCamera.TrackingState) -> Bool {
+        switch trackingState {
+        case .normal:
+            return true
+        default:
+            return false
+        }
+    }
 }
