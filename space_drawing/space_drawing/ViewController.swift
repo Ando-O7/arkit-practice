@@ -50,4 +50,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             return false
         }
     }
+
+    private func worldPositionForScreenCenter() -> SCNVector3 {
+        // get position screen center
+        let screenBounds = UIScreen.main.bounds
+        let center = CGPoint(x: screenBounds.midX, y:screenBounds.midY)
+
+        // convert Three-dimensional vector
+        let centerVec3 = SCNVector3Make(Float(center.x), Float(center.y), 0.99)
+
+        // unproject(convert world position)
+        return sceneView.unprojectPoint(centerVec3)
+    }
 }
