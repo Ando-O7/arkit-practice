@@ -9,11 +9,14 @@
 import UIKit
 import SceneKit
 import ARKit
+import ColorSlider
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    @IBOutlet var colorSlider: ColorSlider!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // start session
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+    }
+
+    private func setupColorPicker() {
+        colorSlider = ColorSlider(orientation: .vertical, previewView: nil)
     }
 
     private func isReadyForDrawing(trackingState: ARCamera.TrackingState) -> Bool {
