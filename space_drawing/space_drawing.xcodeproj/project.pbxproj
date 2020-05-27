@@ -15,6 +15,8 @@
 		AA19C678247BFA4C00F96966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA19C676247BFA4C00F96966 /* LaunchScreen.storyboard */; };
 		AA19C683247BFA4C00F96966 /* space_drawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19C682247BFA4C00F96966 /* space_drawingTests.swift */; };
 		AA19C68E247BFA4C00F96966 /* space_drawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19C68D247BFA4C00F96966 /* space_drawingUITests.swift */; };
+		AA19C69D247EB15900F96966 /* ColorSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA19C69C247EB15800F96966 /* ColorSlider.framework */; };
+		AA19C69E247EB15900F96966 /* ColorSlider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA19C69C247EB15800F96966 /* ColorSlider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AA19C69F247EB15900F96966 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AA19C69E247EB15900F96966 /* ColorSlider.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AA19C668247BFA3F00F96966 /* space_drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = space_drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA19C66B247BFA3F00F96966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 		AA19C689247BFA4C00F96966 /* space_drawingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = space_drawingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA19C68D247BFA4C00F96966 /* space_drawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = space_drawingUITests.swift; sourceTree = "<group>"; };
 		AA19C68F247BFA4C00F96966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA19C69C247EB15800F96966 /* ColorSlider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ColorSlider.framework; path = Carthage/Build/iOS/ColorSlider.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA19C69D247EB15900F96966 /* ColorSlider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 				AA19C681247BFA4C00F96966 /* space_drawingTests */,
 				AA19C68C247BFA4C00F96966 /* space_drawingUITests */,
 				AA19C669247BFA3F00F96966 /* Products */,
+				AA19C69B247EB15800F96966 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +147,14 @@
 			path = space_drawingUITests;
 			sourceTree = "<group>";
 		};
+		AA19C69B247EB15800F96966 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA19C69C247EB15800F96966 /* ColorSlider.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +165,8 @@
 				AA19C664247BFA3F00F96966 /* Sources */,
 				AA19C665247BFA3F00F96966 /* Frameworks */,
 				AA19C666247BFA3F00F96966 /* Resources */,
+				AA19C69F247EB15900F96966 /* Embed Frameworks */,
+				AA19C6A0247EB1A500F96966 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,6 +283,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA19C6A0247EB1A500F96966 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ColorSlider.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA19C664247BFA3F00F96966 /* Sources */ = {
@@ -436,6 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = space_drawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +508,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7BEMYADRJ6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = space_drawing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
