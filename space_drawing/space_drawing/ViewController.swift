@@ -13,6 +13,12 @@ import ColorSlider
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    private var isTouching = false {
+        didSet {
+            pen.isHidden = !isTouching
+        }
+    }
+
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var pen: UILabel!
     
