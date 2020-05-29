@@ -14,6 +14,7 @@ import ColorSlider
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var pen: UILabel!
     
     @IBOutlet var colorSlider: ColorSlider!
 
