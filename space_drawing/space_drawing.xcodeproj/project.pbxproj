@@ -17,6 +17,7 @@
 		AA19C68E247BFA4C00F96966 /* space_drawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19C68D247BFA4C00F96966 /* space_drawingUITests.swift */; };
 		AA19C69D247EB15900F96966 /* ColorSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA19C69C247EB15800F96966 /* ColorSlider.framework */; };
 		AA19C69E247EB15900F96966 /* ColorSlider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AA19C69C247EB15800F96966 /* ColorSlider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA33750C2481572400416806 /* GeometryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33750B2481572400416806 /* GeometryNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		AA19C68D247BFA4C00F96966 /* space_drawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = space_drawingUITests.swift; sourceTree = "<group>"; };
 		AA19C68F247BFA4C00F96966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA19C69C247EB15800F96966 /* ColorSlider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ColorSlider.framework; path = Carthage/Build/iOS/ColorSlider.framework; sourceTree = "<group>"; };
+		AA33750B2481572400416806 /* GeometryNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				AA19C674247BFA4C00F96966 /* Assets.xcassets */,
 				AA19C676247BFA4C00F96966 /* LaunchScreen.storyboard */,
 				AA19C679247BFA4C00F96966 /* Info.plist */,
+				AA33750B2481572400416806 /* GeometryNode.swift */,
 			);
 			path = space_drawing;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA19C670247BFA3F00F96966 /* ViewController.swift in Sources */,
+				AA33750C2481572400416806 /* GeometryNode.swift in Sources */,
 				AA19C66C247BFA3F00F96966 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
