@@ -10,8 +10,11 @@ import SceneKit
 
 open class GeometryNode: SCNNode {
 
+    private var vertices: [SCNVector3] = []
+    private var indices: [Int32] = []
     private let lineWidth: Float
     private let color: UIColor
+    private var verticesPool: [SCNVector3] = []
 
     public init(color: UIColor, lineWidth: Float) {
         self.color = color
