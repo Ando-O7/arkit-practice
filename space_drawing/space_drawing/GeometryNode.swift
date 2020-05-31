@@ -25,4 +25,11 @@ open class GeometryNode: SCNNode {
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    public func reset() {
+        verticesPool.removeAll()
+        vertices.removeAll()
+        indices.removeAll()
+        geometry = nil
+    }
 }
