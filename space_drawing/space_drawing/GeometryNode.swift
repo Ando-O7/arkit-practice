@@ -22,6 +22,20 @@ open class GeometryNode: SCNNode {
         super.init()
     }
 
+    private func updateGeometry() {
+        guard vertices.count >= 3 else {
+            return // not vertices
+        }
+
+        let source = SCNGeometrySource(vertices: vertices)
+        let element = SCNGeometryElement(indices: indices, primitiveType: .triangleStrip)
+        geometry = SCNGeometry(sources: [source], elements: [element])
+        if let material = geometry?.firstMaterial {
+            material.diffuse.contents = color
+            material.isDoubleSided = true
+        }
+    }
+
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
