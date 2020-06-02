@@ -22,6 +22,33 @@ open class GeometryNode: SCNNode {
         super.init()
     }
 
+    public func addVertice(_ vertice: SCNVector3) {
+        var smoothed = SCNVector3Zero
+        if verticesPool.count < 3 {
+            if !SCNVector3EqualToVector3(vertice, SCNVector3Zero) {
+                verticesPool.append(vertice)
+            }
+            return
+        } else {
+            for vertice in verticesPool {
+                smoothed.x += vertice.x
+                smoothed.y += vertice.y
+                smoothed.z += vertice.z
+            }
+            smoothed.x /= Float(verticesPool.count)
+            smoothed.y /= Float(verticesPool.count)
+            smoothed.z /= Float(verticesPool.count)
+            verticesPool.removeAll()
+        }
+        vertices.append(SCNVector3Make(smoothed.x, smoothed.y - lineWidth, smoothed.z))
+        vertices.append(SCNVector3Make(smoothed.x, smoothed.y + lineWidth, smoothed.z))
+        let count = vertices.count
+        indices.append(Int32(count-2))
+        indices.append(Int32(count-1))
+
+        updateGeometry()
+    }
+
     private func updateGeometry() {
         guard vertices.count >= 3 else {
             return // not vertices
