@@ -13,6 +13,8 @@ import ColorSlider
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    private var drawingNodes = [GeometryNode]()
+
     private var isTouching = false {
         didSet {
             pen.isHidden = !isTouching
