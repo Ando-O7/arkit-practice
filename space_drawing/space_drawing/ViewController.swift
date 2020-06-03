@@ -51,6 +51,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         colorSlider = ColorSlider(orientation: .vertical, previewView: nil)
     }
 
+    private func reset() {
+        for node in drawingNodes {
+            node.removeFromParentNode()
+        }
+        drawingNodes.removeAll()
+    }
+
     private func isReadyForDrawing(trackingState: ARCamera.TrackingState) -> Bool {
         switch trackingState {
         case .normal:
