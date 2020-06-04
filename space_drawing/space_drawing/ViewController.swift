@@ -78,4 +78,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // unproject(convert world position)
         return sceneView.unprojectPoint(centerVec3)
     }
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        guard isTouching else {
+            return
+        }
+        guard let currentDrawing = drawingNodes.last else {
+            return
+        }
+
+        DispatchQueue.main.async(execute: {
+            let vertice = self.worldPositionForScreenCenter()
+            currentDrawing.addVertice(vertice)
+        })
+    }
 }
