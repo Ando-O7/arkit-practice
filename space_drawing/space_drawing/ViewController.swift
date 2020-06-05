@@ -92,4 +92,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             currentDrawing.addVertice(vertice)
         })
     }
+
+    func session(_ session: ARSession, didFailWithError error: Error) {
+        print("\(self.classForCoder)/\(#function), error: " + error.localizedDescription)
+    }
 }
