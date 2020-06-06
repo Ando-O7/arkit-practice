@@ -96,4 +96,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func session(_ session: ARSession, didFailWithError error: Error) {
         print("\(self.classForCoder)/\(#function), error: " + error.localizedDescription)
     }
+
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
+        print("State: \(camera.trackingState)")
+
+        let state = camera.trackingState
+    }
 }
