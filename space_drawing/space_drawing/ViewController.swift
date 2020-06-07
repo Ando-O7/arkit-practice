@@ -22,6 +22,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var statusLabel: UILabel!
     @IBOutlet var pen: UILabel!
     
     @IBOutlet var colorSlider: ColorSlider!
@@ -43,6 +44,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configuration.planeDetection = .horizontal
         configuration.isLightEstimationEnabled = true
         
+        statusLabel.text = "Wait..."
+
         // start session
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
