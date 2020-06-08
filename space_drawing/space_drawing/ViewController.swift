@@ -45,6 +45,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         configuration.isLightEstimationEnabled = true
         
         statusLabel.text = "Wait..."
+        pen.isHidden = true
 
         // start session
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
