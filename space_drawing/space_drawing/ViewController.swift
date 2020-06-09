@@ -106,4 +106,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         let state = camera.trackingState
     }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let frame = sceneView.session.currentFrame else {return}
+        guard isReadyForDrawing(trackingState: frame.camera.trackingState) else {return}
+
+        let drawingNode = GeometryNode(color: colorSlider.color, lineWidth: 0.004)
+        sceneView.scene.rootNode.addChildNode(drawingNode)
+        drawingNodes.append(drawingNode)
+
+        statusLabel.text = "Move your device."
+
+        isTouching = true
+    }
 }
