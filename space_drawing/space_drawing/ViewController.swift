@@ -119,4 +119,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
         isTouching = true
     }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        isTouching = false
+        statusLabel.text = "Touch the screen to draw."
+    }
 }
