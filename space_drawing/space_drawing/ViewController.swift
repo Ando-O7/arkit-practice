@@ -124,4 +124,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         isTouching = false
         statusLabel.text = "Touch the screen to draw."
     }
+
+    @IBAction func resetBtnTapped(_ sender: UIButton) {
+        reset()
+    }
 }
